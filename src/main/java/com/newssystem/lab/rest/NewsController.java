@@ -35,4 +35,6 @@ public class NewsController {
         newsService.save(new News("elo","a","c"));
         commentDaoService.save(new Comment("iss","we"));
     }
+
+    //tego nie bedzie w testy
 }
