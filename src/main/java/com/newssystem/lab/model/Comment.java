@@ -13,6 +13,9 @@ public class Comment {
     public String id;
     public String idNews;
     public String comment;
+    public String author;
+    public String data;
+
 
     public Comment(String idNews, String comment) {
         this.idNews = idNews;

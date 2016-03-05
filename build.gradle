@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.3.2.RELEASE'
+		springBootVersion = '1.3.3.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -29,8 +29,6 @@ repositories {
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-actuator')
-	compile('org.springframework.boot:spring-boot-starter-mustache')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.apache.commons:commons-dbcp2:2.1.1')
 	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
