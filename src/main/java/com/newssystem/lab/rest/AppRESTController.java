@@ -19,19 +19,18 @@ public class AppRESTController {
 
 
     private final NewsService newsService;
-    private final CommentService commentService;
 
 
-    public AppRESTController(NewsService newsService, CommentService commentService) {
-        this.newsService = newsService;
-        this.commentService = commentService;
+    @Autowired
+    public AppRESTController(NewsService newsService) {
+        this.newsService = newsService;;
     }
-
+/*
     @RequestMapping(method = RequestMethod.GET)
-    public List<News> findAll(){
+    public List<News> getAll(){
         return newsService.getNews();
     }
-
+*/
     @RequestMapping(method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.CREATED)
     public News create(@RequestBody News newsEntity){

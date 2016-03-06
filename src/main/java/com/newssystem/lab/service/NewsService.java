@@ -24,6 +24,7 @@ public class NewsService implements ServiceInterface<News>{
     }
 
 
+    @Override
     public List<News> getNews(){
 
         List<News> newsEntity = newsRepository.findAll();

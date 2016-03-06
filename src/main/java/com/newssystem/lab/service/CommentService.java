@@ -4,12 +4,14 @@ import com.newssystem.lab.model.Comment;
 import com.newssystem.lab.model.News;
 import com.newssystem.lab.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by Lukasz on 2016-03-06.
  */
+@Service
 public class CommentService implements ServiceInterface<Comment>{
 
     public CommentRepository commentRepository;
