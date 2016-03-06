@@ -7,11 +7,11 @@ import java.util.List;
 /**
  * Created by Lukasz on 2016-03-03.
  */
-public interface NewsServiceInterface {
+public interface ServiceInterface<T> {
 
-    List<News> getNews();
-    News save(News obj);
+    List<T> getNews();
+    News create(T obj);
     News delete(String id);
     News findById(String id);
-    News update(News obj);
+    News update(T obj);
 }

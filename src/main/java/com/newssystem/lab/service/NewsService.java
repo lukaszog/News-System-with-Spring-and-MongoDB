@@ -6,12 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import static java.util.stream.Collectors.toList;
 
 /**
  * Created by Lukasz on 2016-03-03.
  */
 @Service
-public class NewsService implements NewsServiceInterface{
+public class NewsService implements ServiceInterface<News>{
 
 
     private NewsRepository newsRepository;
@@ -24,10 +25,28 @@ public class NewsService implements NewsServiceInterface{
 
 
     public List<News> getNews(){
-        return newsRepository.findAll();
+
+        List<News> newsEntity = newsRepository.findAll();
+        return convertToDTOs(newsEntity);
     }
 
-    public News save(News obj){
+    private List<News> convertToDTOs(List<News> models){
+        return models.stream().map(this::convertToDTO)
+                .collect(toList());
+    }
+
+    private News convertToDTO(News model){
+
+        News dto = new News();
+        dto.setId(model.getId());
+        dto.setTitle(model.getTitle());
+        dto.setData(model.getData());
+        dto.setText(model.getText());
+        return dto;
+
+    }
+
+    public News create(News obj){
         return newsRepository.save(obj);
     }
 
@@ -45,5 +64,7 @@ public class NewsService implements NewsServiceInterface{
     public News update(News obj) {
         return null;
     }
+
+
 
 }
