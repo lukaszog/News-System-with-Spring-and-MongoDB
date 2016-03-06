@@ -20,17 +20,16 @@ public class AppRESTController {
 
     private final NewsService newsService;
 
-
     @Autowired
     public AppRESTController(NewsService newsService) {
-        this.newsService = newsService;;
+        this.newsService = newsService;
     }
-/*
-    @RequestMapping(method = RequestMethod.GET)
-    public List<News> getAll(){
+
+    @RequestMapping(method = RequestMethod.GET, value = "/getNews")
+    public @ResponseBody List<News> findAll() {
         return newsService.getNews();
     }
-*/
+
     @RequestMapping(method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.CREATED)
     public News create(@RequestBody News newsEntity){
