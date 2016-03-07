@@ -9,9 +9,9 @@ import java.util.List;
  */
 public interface ServiceInterface<T> {
 
-    List<T> getNews();
-    News create(T obj);
-    News delete(String id);
-    News findById(String id);
-    News update(T obj);
+    List<T> getObj();
+    T create(T obj);
+    T delete(String id);
+    T findById(String id);
+    T update(T obj);
 }

@@ -11,15 +11,35 @@ public class Comment {
 
     @Id
     public String id;
-    public String idNews;
+    public String NewsId;
     public String comment;
     public String author;
     public String data;
 
+    public Comment() {}
 
-    public Comment(String idNews, String comment) {
-        this.idNews = idNews;
+    public Comment(String id, String newsId, String comment, String author, String data) {
+        this.id = id;
+        this.NewsId = newsId;
         this.comment = comment;
+        this.author = author;
+        this.data = data;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 
     public String getId() {
@@ -30,12 +50,12 @@ public class Comment {
         this.id = id;
     }
 
-    public String getIdNews() {
-        return idNews;
+    public String getNewsId() {
+        return NewsId;
     }
 
-    public void setIdNews(String idNews) {
-        this.idNews = idNews;
+    public void setNewsId(String newsId) {
+        this.NewsId = newsId;
     }
 
     public String getComment() {
