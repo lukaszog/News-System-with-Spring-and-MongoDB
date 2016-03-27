@@ -42,6 +42,7 @@ public class NewsService implements ServiceInterface<News>{
         dto.setTitle(model.getTitle());
         dto.setData(model.getData());
         dto.setText(model.getText());
+        dto.setAuthor(model.getAuthor());
         return dto;
 
     }
@@ -57,14 +58,15 @@ public class NewsService implements ServiceInterface<News>{
 
     @Override
     public News findById(String id) {
-        return null;
+
+        News news = newsRepository.findOne(id);
+
+        return news;
     }
 
     @Override
     public News update(News obj) {
         return null;
     }
-
-
 
 }

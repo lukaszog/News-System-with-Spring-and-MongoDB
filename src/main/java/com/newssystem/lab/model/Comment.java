@@ -11,7 +11,7 @@ public class Comment {
 
     @Id
     public String id;
-    public String NewsId;
+    public String newsId;
     public String comment;
     public String author;
     public String data;
@@ -20,7 +20,7 @@ public class Comment {
 
     public Comment(String id, String newsId, String comment, String author, String data) {
         this.id = id;
-        this.NewsId = newsId;
+        this.newsId = newsId;
         this.comment = comment;
         this.author = author;
         this.data = data;
@@ -51,11 +51,11 @@ public class Comment {
     }
 
     public String getNewsId() {
-        return NewsId;
+        return newsId;
     }
 
     public void setNewsId(String newsId) {
-        this.NewsId = newsId;
+        this.newsId = newsId;
     }
 
     public String getComment() {

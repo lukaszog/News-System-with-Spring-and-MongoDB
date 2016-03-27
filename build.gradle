@@ -30,9 +30,12 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-test')
+	compile('com.fasterxml.jackson.core:jackson-databind:2.0.1')
 	compile('org.apache.commons:commons-dbcp2:2.1.1')
 	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
-
+	compile('javax.validation:validation-api:1.1.0.Final')
+	compile('org.hibernate:hibernate-validator:5.2.4.Final')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.assertj:assertj-core:2.3.0')
 }

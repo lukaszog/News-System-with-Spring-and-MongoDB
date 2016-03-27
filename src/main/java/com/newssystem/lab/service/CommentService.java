@@ -30,7 +30,7 @@ public class CommentService implements ServiceInterface<Comment>,CustomCommentIn
 
     @Override
     public Comment create(Comment obj) {
-        return null;
+        return commentRepository.save(obj);
     }
 
     @Override
@@ -48,10 +48,9 @@ public class CommentService implements ServiceInterface<Comment>,CustomCommentIn
         return null;
     }
 
-    @Override
-    public Comment findByNewsId(int id) {
+    public List<Comment> findByNewsId(String id) {
         List<Comment> commentList = commentRepository.findByNewsId(id);
-        return (Comment) convertToDTOs(commentList);
+        return convertToDTOs(commentList);
     }
 
     private List<Comment> convertToDTOs(List<Comment> models){

@@ -12,6 +12,6 @@ import java.util.List;
 @Repository
 public interface CommentRepository extends MongoRepository<Comment, String> {
 
-    List<Comment> findByNewsId(int id);
+    List<Comment> findByNewsId(String id);
 
 }
